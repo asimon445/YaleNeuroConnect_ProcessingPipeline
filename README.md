@@ -67,6 +67,7 @@ Below is the order in which you should run the scripts, a description of which p
 
 
 
+
 **How to visually inspect for quality control using BioImage Suite**
 In the terminal, type: bis.tcl -> GUI pops us -> Click on Brain Register
 
