@@ -8,19 +8,27 @@ Below is the order in which you should run the scripts, a description of which p
     Steps:
        a. Edit the script by typing "gedit convert_dicom_to_bids.csh" in your terminal
        b. Edit the dicom names of subjects you want to preprocess. Be sure to ensure that your input/output directories are correct! 
-       c.	Run it by typing "tcsh -c ./convert_dicom_to_bids.csh" in your terminal.
+       c. Run it by typing "tcsh -c ./convert_dicom_to_bids.csh" in your terminal.
 
 2. tar_zip.csh -- zips your original DICOM files to save space
    Steps:
        a. Edit the script by typing "gedit tar_zip.csh" in your terminal
-       b. Edit paXXXX_dicom name and run)
-b.	After it has completed can keep the tgz file and rm -rf the original dicom file in the /data18 directory (make sure this is done only after the file is completely tar zipped).
-c.	Run this step after converting to bids since that requires an untarred file
-![image](https://github.com/user-attachments/assets/e47ab537-092d-4e64-9317-4ab289e518b0)
+       b. Edit the dicom names of subjects you want to preprocess. Be sure to ensure that your input/output directories are correct!
+       c. Run it by typing "tcsh -c ./tar_zip.csh" in your terminal.
+       d. After it has completed, you can rm -rf the original dicom file (but keep the tgz file!) from the input directory to save disk space (make sure this is done only after the file is completely tar zipped).
+       ** Run this step after converting to bids since that requires an untarred file
 
+3. strip_brain.csh -- runs skull stripping by calling on to FSL optimized brain extraction tool (optiBET) to skull strip the T1 weighted MPRAGE
+    Steps:
+       a. Edit the script by typing "strip_brain.csh" in your terminal
+       b. Edit the dicom names of subjects you want to preprocess. Be sure to ensure that your input/output directories are correctly pointing to the directory where the T1 scans are located.
+       c. Run it by typing "tcsh -c ./strip_brain.csh" in your terminal.
+       ** Visual inspection should be performed to ensure that the skull stripping worked properly
 
+4. batch_bids_unzip_motion_zip.csh
 
-Skull stripping of the structural scans was done using optiBET (FSL)
+5. 
+
 SPM12 was used for motion correction. 
 Nonlinear registration of the MPRAGE to the MNI template was performed using BioImage Suite
 Linear registration of the functional to the structural images was done through a combination of FSL and BioImage Suite. 
