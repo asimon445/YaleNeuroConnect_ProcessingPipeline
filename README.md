@@ -78,12 +78,14 @@ In the terminal, type: bis.tcl -> GUI pops us -> Click on Brain Register
 File -> Load -> T1w *_optiBET.nii.gz image 
 Check that no major chunks of brain cut off, no major portions of skull unstripped.
 
+
 **Non linear registration:** 
 
 Reference Viewer: File -> Standard images -> load the MNI_1mm_stripped 
 Transform Viewer: load the T1w skull stripped image
 Brain register panel -> Transformations -> load *_3rdpass.grd file -> Click image reslice 
 Check if all the crosshairs align between template and transformed image. Check all anatomical landmarks ventricles, subcortical structures, cerebellum, line up. 
+
 
 **Linear registration:** 
 
