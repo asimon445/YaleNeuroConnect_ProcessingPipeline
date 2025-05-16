@@ -2,6 +2,7 @@
 
 This repository contains the fMRI data processing pipeline utilized by the YaleNeuroConnect study. The shell scripts provided will only function properly if you have installed FSL, BioImage Suite, and SPM12, and added each of those softwares to your path. These scripts are located in the '/sample/scripts/' folder provided in this repository. Additionally, we have provided one subjects' data from each step in the preprocessing pipeline that can be used as a reference/example. The folder/file structure that you use should mirror this example subjects' for the pipeline to work properly.  
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Below is the order in which you should run the scripts, a description of which preprocessing steps they accomplish, and a step-by-step guide on how to set them up and run them. 
 1. convert_dicom_to_bids.csh -- converts your DICOM files to BIDS.
@@ -65,23 +66,24 @@ Below is the order in which you should run the scripts, a description of which p
         a. Make sure there is a .txt file called 'SubjList.txt' in the scripts folder that contains a list of the subject IDs that you are processing currently
         b. Run it by typing "tcsh -c ./batch_uniformsmoothing.csh.csh" in your terminal.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+**Visual inspection for quality control using BioImage Suite:**
 
-**How to visually inspect for quality control using BioImage Suite**
 In the terminal, type: bis.tcl -> GUI pops us -> Click on Brain Register
 
-Skull stripping:
+**Skull stripping:**
 File -> Load -> T1w *_optiBET.nii.gz image 
 Check that no major chunks of brain cut off, no major portions of skull unstripped.
 
-Non linear: 
+**Non linear:** 
 Reference Viewer: File -> Standard images -> load the MNI_1mm_stripped 
 Transform Viewer: load the T1w skull stripped image
 Brain register panel -> Transformations -> load *_3rdpass.grd file -> Click image reslice 
 Check if all the crosshairs align between template and transformed image. Check all anatomical landmarks ventricles, subcortical structures, cerebellum, line up. 
 
-Linear: 
+**Linear:** 
 Reference Viewer: load the T1w skull stripped image of the participant
 Transform Viewer: load the mean*.nii.gz mean functional image of the participant
 Brain register panel -> Transformations -> load * _FCTto3Depireg_converted.matr of the same participant -> Click image reslice 
