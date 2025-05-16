@@ -51,11 +51,12 @@ Below is the order in which you should run the scripts, a description of which p
 
 7. create_xmlgfiles_matrix_byrun.csh -- creates the setup files for making the functional connectivity matrices
     Steps:
-        a. Make sure there is a .txt file called 'SubjList.txt' that contains a list of the subject IDs that you want to make matrices for
+        a. Navigate to /sample/Matrix_Connectivity/indiv_setups/ in your terminal
+        a. Make sure there is a .txt file in /sample/Matrix_Connectivity/indiv_setups/text_files/ called 'SubjList.txt' in that contains a list of the subject IDs that you want to make matrices for
         b. Run it by typing "tcsh -c ./create_xmlgfiles_matrix_byrun.csh" in your terminal
         ** This will function best if these are stored (along with this script) in a separate folder from the rest of the files
   
-8. Create the functional connectivity matrices. This will compute a 268x268 functional connectivity matrix from your voxel level time series data. It will also regress mean time courses in white matter, cerebrospinal fluid, and grey matter; high-pass filter to correct linear, quadratic, and cubic drift; regression of 24 motion parameters; and low-pass filter (Gaussian filter, σ = 1.55) the data.
+8. Create the functional connectivity matrices. This will compute a 268x268 functional connectivity matrix from your voxel level time series data using the Shen268 node atlas. It will also regress mean time courses in white matter, cerebrospinal fluid, and grey matter; high-pass filter to correct linear, quadratic, and cubic drift; regression of 24 motion parameters; and low-pass filter (Gaussian filter, σ = 1.55) the data.
     Steps:
         a. For each the subject that you are processing, move all files containing "MNI" in the filename in the folder containing their anatomical data to the /registrations folder where the scripts are stored. Then, copy everything from the registrations folder for that subject, and put it in their anatomy folder. 
         b. In the terminal, navigate to where the setup files are located.
