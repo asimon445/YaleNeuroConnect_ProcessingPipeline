@@ -7,11 +7,8 @@ This repository contains the fMRI data processing pipeline utilized by the YaleN
 Below is the order in which you should run the scripts, a description of which preprocessing steps they accomplish, and a step-by-step guide on how to set them up and run them. 
 1. convert_dicom_to_bids.csh -- converts your DICOM files to BIDS.
     Steps:
-   
        a. Edit the script by typing "gedit convert_dicom_to_bids.csh" in your terminal
-   
        b. Edit the dicom names of subjects you want to preprocess. Be sure that your input/output directories are correct!
-   
        c. Run it by typing "tcsh -c ./convert_dicom_to_bids.csh" in your terminal.
 
 3. tar_zip.csh -- zips your original DICOM files to save space
