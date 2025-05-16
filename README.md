@@ -73,23 +73,15 @@ Below is the order in which you should run the scripts, a description of which p
 
 In the terminal, type: bis.tcl -> GUI pops us -> Click on Brain Register
 
-**Skull stripping:**
-
-File -> Load -> T1w *_optiBET.nii.gz image 
+**Skull stripping:** File -> Load -> T1w *_optiBET.nii.gz image 
 Check that no major chunks of brain cut off, no major portions of skull unstripped.
 
-
-**Non linear registration:** 
-
-Reference Viewer: File -> Standard images -> load the MNI_1mm_stripped 
+**Non linear registration:** Reference Viewer: File -> Standard images -> load the MNI_1mm_stripped 
 Transform Viewer: load the T1w skull stripped image
 Brain register panel -> Transformations -> load *_3rdpass.grd file -> Click image reslice 
 Check if all the crosshairs align between template and transformed image. Check all anatomical landmarks ventricles, subcortical structures, cerebellum, line up. 
 
-
-**Linear registration:** 
-
-Reference Viewer: load the T1w skull stripped image of the participant
+**Linear registration:** Reference Viewer: load the T1w skull stripped image of the participant
 Transform Viewer: load the mean*.nii.gz mean functional image of the participant
 Brain register panel -> Transformations -> load * _FCTto3Depireg_converted.matr of the same participant -> Click image reslice 
 Check if all the crosshairs align between anatomical and transformed mean functional image. Check all anatomical landmarks ventricles, subcortical structures, cerebellum, line up. 
