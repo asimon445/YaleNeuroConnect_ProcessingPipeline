@@ -50,7 +50,7 @@ Below is the order in which you should run the scripts, a description of which p
 
 6. bislinearregister.csh -- performs linear registration of the functional scans to the structural MRIs  
   
-  Steps:  
+    Steps:  
        a. Edit the script by typing "gedit bislinearregister.csh.csh" in your terminal  
        b. Edit the file names of subjects you want to preprocess. Be sure that your input/output directories are correct!  
        c. Run it by typing "tcsh -c ./bislinearregister.csh.csh" in your terminal.  
