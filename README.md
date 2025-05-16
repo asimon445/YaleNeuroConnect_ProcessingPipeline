@@ -62,10 +62,10 @@ Below is the order in which you should run the scripts, a description of which p
         b. In the terminal, navigate to where the setup files are located.
         c. Run this step by typing into the terminal: bis_fmrisetup.tcl sub-XXXX_matrix_shen268.xmlg matrix  
 
-9. batch_uniformsmoothing.csh -- uniform smoothing using a 4mm FWHM Gaussian kernel (right?)
+9. batch_uniformsmoothing.csh -- uniform smoothing using a 6mm FWHM Gaussian kernel 
     Steps:
         a. Make sure there is a .txt file called 'SubjList.txt' in the scripts folder that contains a list of the subject IDs that you are processing currently
-        b. Run it by typing "tcsh -c ./batch_uniformsmoothing.csh.csh" in your terminal.
+        b. Run it by typing "tcsh -c ./batch_uniformsmoothing.csh" in your terminal.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
